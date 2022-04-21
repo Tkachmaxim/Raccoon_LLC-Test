@@ -53,26 +53,16 @@
 }
 
 
-@media screen and(min-width:1280px) {
-    .mugName {
-        font-size: 20px;
-        line-height: 1.5;
-        font-weight: 400;
-    }
-    .mugPrice {
+
+    @media screen and(min-width:1280px) {
+        .mugName {
+            font-size: 20px;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+    
+        .mugPrice {
             font-size: 19px;
             font-weight: 1.68;
-    }
-}
-
-
-    .mugName {
-        font-weight: 400;
-        font-size:calc(width/23);
-        line-height: 1.5;
-    }
-    
-    .mugPrice {
-        font-size: calc(width/22);
-        font-weight: 1.68;
+        }
     }
