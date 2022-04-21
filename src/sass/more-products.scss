@@ -1,0 +1,78 @@
+
+.productImageItem {
+    display: block;
+    width: calc(100vw*0.48);
+
+    @media screen and (min-width: 1280px){ 
+    width: 300px;
+    height: 380px;
+
+    }
+}
+
+
+
+.mugs__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.More-products-title {
+    font-size: 12px;
+    margin-top: 20px;
+    text-transform:uppercase;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #1D1F2E;
+    text-align: center;
+
+}
+
+.mugName {
+    
+    font-family: Karla;
+    text-align: center;
+    color: #1D1F2E;
+}
+
+.mugPrice {
+    color: #1D1F2E66;
+}
+
+
+.mugPrice__discount {
+    color: #A25F4B;
+}
+
+.mug_price__old {
+    color: #1D1F2E66;
+    text-decoration: line-through;
+}
+
+
+@media screen and(min-width:1280px) {
+    .mugName {
+        font-size: 20px;
+        line-height: 1.5;
+        font-weight: 400;
+    }
+    .mugPrice {
+            font-size: 19px;
+            font-weight: 1.68;
+    }
+}
+
+
+    .mugName {
+        font-weight: 400;
+        font-size:calc(width/23);
+        line-height: 1.5;
+    }
+    
+    .mugPrice {
+        font-size: calc(width/22);
+        font-weight: 1.68;
+    }

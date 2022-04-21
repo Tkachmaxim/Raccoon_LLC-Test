@@ -1,0 +1,22 @@
+
+body {
+    width: 100vw;
+    font-family: "Karla";
+    background-color: #E5E5E5;;
+}
+
+ul {
+    list-style: none;
+}
+
+
+
+.container {
+    margin: 0 auto;
+
+    @media screen and (min-width:1280px) {
+        width: 940 px;
+        padding-left: 170px;
+        padding-right: 170px;
+    }
+}

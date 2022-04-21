@@ -3,5 +3,10 @@
  * Все паршалы подключаются сюда.
  */
 
-// Стили для файла с примером HTML-фрагмента
-@import './example';
+// Стили для файла с примером HTML-фрагмент
+
+@import './base/reset.scss';
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@500&display=swap');
+@import './base/components.scss';
+@import './product.scss';
+@import './more-products.scss';
