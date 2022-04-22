@@ -6,7 +6,7 @@ import markUpProductCardMobile from './markUpProductCardMobile';
 import markUpProductCardDesktop from './markUpProductCardDesktop';
 
 const refs = {
-  featuredMugs: document.querySelector('.feauturedMug'),
+  featuredMugs: document.querySelector('.product__feauturedMug'),
   products: document.querySelector('.swiper-wrapper'),
 };
 

@@ -2,7 +2,6 @@ const swiperOptions = {
   // Optional parameters
   direction: 'horizontal',
   loop: true,
-  centeredSlidesBounds: true,
 
   slidesPerView: 2,
 
@@ -11,6 +10,9 @@ const swiperOptions = {
   autoplay: {
     delay: 3000,
   },
+
+  centerInsufficientSlides: true,
+
   scrollbar: {
     el: '.swiper-scrollbar',
   },

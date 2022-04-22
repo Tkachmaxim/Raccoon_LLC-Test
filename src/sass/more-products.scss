@@ -1,13 +1,16 @@
 
-.productImageItem {
+.products__imageItem {
     display: block;
-    width: calc(100vw*0.48);
     margin-bottom: 35px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100%*0.95);
+
 
     @media screen and (min-width: 1280px){ 
     width: 300px;
     height: 380px;
-
+    margin: 0 0 35px 0;
     }
 }
 
@@ -16,13 +19,15 @@
 .mugs__list {
     margin-left: auto;
     margin-right: auto;
-    width: 934px;
+    width: 940px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
-.More-products-title {
+
+
+.products__title {
     font-size: 12px;
     text-transform:uppercase;
     margin-bottom: 30px;
@@ -38,7 +43,7 @@
 
 }
 
-.mugName {
+.products__mugName {
     font-size: 20px;
     line-height: 1.5;
     font-family: Karla;
@@ -47,25 +52,26 @@
     margin-bottom: 8px;
 }
 
-.mugPrice {
+.products__mugPrice {
+    text-align: center;
     font-size: 16px;
     color: #1D1F2E66;
 }
 
 @media screen and(min-width:1280px) {
-    .mugPrice {
+    .products__mugPrice {
         margin-bottom: 66px;
     }
 
 }
 
 
-.mugPrice__discount {
+.products__mugPrice__discount {
     font-size: 19px;
     color: #A25F4B;
 }
 
-.mug_price__old {
+.products__mug_price__old {
     font-size: 16px;
     color: #1D1F2E66;
     text-decoration: line-through;
