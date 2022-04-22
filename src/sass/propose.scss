@@ -7,6 +7,7 @@
     display: flex;
     @media screen and (max-width:1279px){
         flex-direction: column;
+        align-items: center;
         padding-left: 20px;
         padding-right: 20px;
             
@@ -64,9 +65,7 @@
     margin-bottom: 14px;
 }
 
-.proposition__text {
-    margin-left: 10%;
-}   
+
 
 @media screen and (min-width:1280px){
 .proposition__text {

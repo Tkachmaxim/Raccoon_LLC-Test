@@ -1,6 +1,5 @@
-import Swiper from 'swiper';
-import swiperOptions from './swiperOptions';
 import { dataFeatured, dataAll } from './data';
+import handleSlider from './slider';
 import markUpFeaturedMugs from './markUpFituredMug';
 import markUpProductCardMobile from './markUpProductCardMobile';
 import markUpProductCardDesktop from './markUpProductCardDesktop';
@@ -30,9 +29,8 @@ function creatingMoreProductsMarkUp() {
     return;
   }
   refs.products.innerHTML = dataAll.map(el => markUpProductCardMobile(el)).join('');
+  handleSlider();
 }
 
 creatingProductMarkUp();
 creatingMoreProductsMarkUp();
-
-const swiper = new Swiper('.mySwiper', swiperOptions);
