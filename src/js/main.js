@@ -1,6 +1,9 @@
 import Swiper from 'swiper';
-
+import swiperOptions from './swiperOptions';
 import { dataFeatured, dataAll } from './data';
+import markUpFeaturedMugs from './markUpFituredMug';
+import markUpProductCardMobile from './markUpProductCardMobile';
+import markUpProductCardDesktop from './markUpProductCardDesktop';
 
 const refs = {
   featuredMugs: document.querySelector('.feauturedMug'),
@@ -8,85 +11,28 @@ const refs = {
 };
 
 function creatingProductMarkUp() {
-  if (window.visualViewport.width < 1280) {
-    const markUp = `<li>
-                <img class="productImage" src=${dataFeatured[0].img} alt="${dataFeatured[0].name}">
-                <p class="mugName">${dataFeatured[0].name}</p>
-                <p class="mugPrice">$ ${dataFeatured[0].price} USD <span class='mug_price__old'>${dataFeatured[0].oldPrice}</span></p>
-</li>`;
-
+  if (window.visualViewport.width > 1280) {
+    const markUp = dataFeatured.map(el => markUpFeaturedMugs(el)).join('');
     refs.featuredMugs.innerHTML = markUp;
-  } else {
-    const markUp = dataFeatured
-      .map(
-        el => `
-                <li>
-                <img class="productImage" src=${el.img} alt="${el.name}" width="370">
-                <p class="mugName">${el.name}</p>
-                <p class="mugPrice ${el.oldPrice && 'mugPrice__discount'}">$ ${
-          el.price
-        } USD <span class='mug_price__old'>${el.oldPrice}
-                </span></p> 
-                </li>`,
-      )
-      .join('');
-
-    refs.featuredMugs.innerHTML = markUp;
+    return;
   }
+  const dataForREnder = dataFeatured[0];
+  const markUp = markUpFeaturedMugs(dataForREnder);
+  refs.featuredMugs.innerHTML = markUp;
 }
 
 function creatingMoreProductsMarkUp() {
-  if (window.visualViewport.width < 1280) {
-    const markUp = dataAll
-      .map(
-        el => `
-                    <div class="swiper-slide">
-                    <img class="productImageItem" src=${el.img} alt="${el.name}" width="300px">
-                    <p class="mugName">${el.name}</p>
-                    <p class="mugPrice ${el.oldPrice && 'mugPrice__discount'}">$ ${
-          el.price
-        } USD <span class="mug_price__old">${el.oldPrice}</span></p>
-                </div>`,
-      )
-      .join('');
-    refs.products.innerHTML = markUp;
-  } else {
-    const markUp = dataAll
-      .map(
-        el => `
-                    <div class="mug">
-                    <img class="productImageItem" src=${el.img} alt="${el.name}" width="300px">
-                    <p class="mugName">${el.name}</p>
-                    <p class="mugPrice ${el.oldPrice && 'mugPrice__discount'}">$ ${
-          el.price
-        } USD <span class="mug_price__old">${el.oldPrice}</span></p>
-                </div>`,
-      )
-      .join('');
-
+  if (window.visualViewport.width > 1280) {
+    const markUp = dataAll.map(el => markUpProductCardDesktop(el)).join('');
     refs.products.classList.remove('swiper-wrapper');
     refs.products.classList.add('mugs__list');
     refs.products.innerHTML = markUp;
+    return;
   }
+  refs.products.innerHTML = dataAll.map(el => markUpProductCardMobile(el)).join('');
 }
 
 creatingProductMarkUp();
 creatingMoreProductsMarkUp();
 
-const swiper = new Swiper('.mySwiper', {
-  // Optional parameters
-  direction: 'horizontal',
-  loop: true,
-  centeredSlidesBounds: true,
-
-  slidesPerView: 2,
-
-  // If we need pagination
-
-  autoplay: {
-    delay: 3000,
-  },
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
+const swiper = new Swiper('.mySwiper', swiperOptions);
